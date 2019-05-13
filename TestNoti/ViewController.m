@@ -34,6 +34,7 @@
 #pragma mark 1. 注册本地推送通知
 static NSString *LocalNotiReqIdentifer = @"LocalNotiReqIdentifer";
 - (void)sendLocalNotification {
+    
     NSString *title = @"通知-title";
     NSString *subTitle = @"通知-subTitle";
     NSString *body = @"通知-body";
@@ -41,9 +42,9 @@ static NSString *LocalNotiReqIdentifer = @"LocalNotiReqIdentifer";
     NSInteger timeInterval = 60;//通知间隔时长必须在60s及以上
     NSDictionary *userInfo = @{@"id":@"LOCAL_NOTIFY_SCHEDULE_ID"};
     
-    if (!@available(iOS 10.0, *)) {
+    if (@available(iOS 10.0, *)) {
         //1.创建通知内容
-        UNMutableNotificationContent *content = [UNMutableNotificationContent new];
+        UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
         [content setValue:@(YES) forKey:@"shouldAlwaysAlertWhileAppIsForeground"];
         content.sound = [UNNotificationSound defaultSound];
         content.title = title;

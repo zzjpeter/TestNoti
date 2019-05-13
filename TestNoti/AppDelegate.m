@@ -59,6 +59,8 @@
      NSDictionary *userInfoRemote = (NSDictionary *)[launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     NSLog(@"userInfoRemote:%@",userInfoRemote);
     
+    [self registerRemoteNotifications];//requestAuthorizationWithOptions 通知必须先授权允许通知，才可以触发并接收通知（本地和远程的都一样）
+    
     return YES;
 }
 // 当App已经完全退出时，获取userInfo参数过程如下：
@@ -111,6 +113,7 @@
 
 // iOS 8及以上版本的远程推送通知注册
 #pragma mark iOS 8及以上版本的远程推送通知注册
+//requestAuthorizationWithOptions 通知必须先授权允许通知，才可以触发并接收通知（本地和远程的都一样）
 - (void)registerRemoteNotifications
 {
     if (@available(iOS 10.0, *)) {
