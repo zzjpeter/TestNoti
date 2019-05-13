@@ -103,11 +103,22 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
     NSLog(@"%@##%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
     NSLog(@"notification:%@",notification);
+    NSLog(@"notification.request.content.userInfo:%@",notification.request.content.userInfo);
 }
 //  iOS>=10: 点击通知进入app时触发（杀死/切到后台唤起）
+//按钮点击事件调用方法
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
     NSLog(@"%@##%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
     NSLog(@"response:%@",response);
+    if ([response.actionIdentifier isEqualToString:@"ActionA"]) {
+        
+    } else if ([response.actionIdentifier isEqualToString:@"ActionB"]) {
+        
+    } else if ([response.actionIdentifier isEqualToString:@"ActionC"]) {
+        
+    }  else if ([response.actionIdentifier isEqualToString:@"ActionD"]) {
+        
+    }
 }
 #endif
 

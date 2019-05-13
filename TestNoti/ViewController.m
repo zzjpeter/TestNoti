@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <UserNotifications/UserNotifications.h>
+#import "YYkit.h"
 
 @interface ViewController ()
 
@@ -42,6 +43,15 @@ static NSString *LocalNotiReqIdentifer = @"LocalNotiReqIdentifer";
     NSInteger timeInterval = 60;//通知间隔时长必须在60s及以上
     NSDictionary *userInfo = @{@"id":@"LOCAL_NOTIFY_SCHEDULE_ID"};
     
+    //构造通知消息
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"apnsJson.json" ofType:nil];
+    NSError *error = nil;
+    NSString *apns = [NSString stringWithContentsOfFile:filePath encoding:(NSUTF8StringEncoding) error:&error];
+    if (error) {
+        NSLog(@"error:%@",error);
+    }
+    userInfo = [[self class] dictionaryWithJsonString:apns];
+    
     if (@available(iOS 10.0, *)) {
         //1.创建通知内容
         UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
@@ -53,6 +63,20 @@ static NSString *LocalNotiReqIdentifer = @"LocalNotiReqIdentifer";
         content.badge = @(badge);
         
         content.userInfo = userInfo;
+        
+        content.categoryIdentifier = @"QiShareCategoryIdentifier";//指明了category和某个通知的关联关系
+        /*
+         通知中心可以注册很多这样的Category，那么如何确定某个通知使用哪一个呢？  这就是靠categoryIdentifier了，在很多地方都用到啦、 就是图片里面画红色线那个。。   想到前面设置UNMutableNotificationContent时候给出提示很重要的那个东西了么？content.categoryIdentifier =  @"catorgry";  就是这句话指明了category和某个通知的关联关系。。。 so，这里一定要对应起来啊。。
+         */
+        // 设置notificationCategory 与 UNNotificationAction
+        UNNotificationAction *actionA = [UNNotificationAction actionWithIdentifier:@"ActionA" title:@"A_Required" options:(UNNotificationActionOptionAuthenticationRequired)];
+        UNNotificationAction *actionB = [UNNotificationAction actionWithIdentifier:@"ActionB" title:@"B_Destructive" options:(UNNotificationActionOptionDestructive)];
+        UNNotificationAction *actionC = [UNNotificationAction actionWithIdentifier:@"ActionC" title:@"C_Foreground" options:(UNNotificationActionOptionForeground)];
+        UNNotificationAction *actionD = [UNTextInputNotificationAction actionWithIdentifier:@"ActionD" title:@"D_InputDestructive" options:(UNNotificationActionOptionDestructive) textInputButtonTitle:@"Send" textInputPlaceholder:@"input some words here ..."];
+        NSArray *actionArr = [[NSArray alloc] initWithObjects:actionA,actionB,actionC,actionD, nil];
+        NSArray *identifierArr = [[NSArray alloc] initWithObjects:@"ActionA",@"ActionB",@"ActionC",@"ActionD", nil];
+        UNNotificationCategory *notificationCategory = [UNNotificationCategory categoryWithIdentifier:@"QiShareCategoryIdentifier" actions:actionArr intentIdentifiers:identifierArr options:(UNNotificationCategoryOptionCustomDismissAction)];
+        [[UNUserNotificationCenter currentNotificationCenter] setNotificationCategories:[NSSet setWithObjects:notificationCategory, nil]];
         
         // 2.设置通知附件内容
         NSError *error = nil;
@@ -128,6 +152,29 @@ static NSString *LocalNotiReqIdentifer = @"LocalNotiReqIdentifer";
     
     // 取消所有的本地通知
     //[[UIApplication sharedApplication] cancelAllLocalNotifications];
+}
+
+#pragma mark 字典转字符串 与 字符串转字典
++(NSString*)dictionaryToJson:(NSDictionary *)dic
+{
+    NSError *parseError = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString
+{
+    if (jsonString == nil) {
+        return nil;
+    }
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
 }
 
 @end
