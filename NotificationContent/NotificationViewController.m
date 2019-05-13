@@ -14,7 +14,7 @@
 
 @interface NotificationViewController () <UNNotificationContentExtension>
 
-@property IBOutlet UILabel *label;
+@property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UILabel *subLabel;
 @property (nonatomic, strong) UIImageView *imageView;
 
@@ -30,8 +30,8 @@
     // Do any required interface initialization here.
     
     CGPoint origin = self.view.frame.origin;
-    CGSize size = self.view.frame.size;
-    
+    CGSize size = [UIScreen mainScreen].bounds.size;
+ 
     self.label = [[UILabel alloc] initWithFrame:CGRectMake(Margin, Margin, size.width-Margin*2, 30)];
     self.label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:self.label];
@@ -48,6 +48,7 @@
     [self.hintLabel setFont:[UIFont systemFontOfSize:14]];
     [self.hintLabel setTextAlignment:NSTextAlignmentLeft];
     [self.view addSubview:self.hintLabel];
+    
     self.view.frame = CGRectMake(origin.x, origin.y, size.width, CGRectGetMaxY(self.imageView.frame)+Margin);
     
     // 设置控件边框颜色
@@ -67,6 +68,7 @@
     
     NSData *data = notification.request.content.userInfo[@"image"];
     UIImage *image = [UIImage imageWithData:data];
+    image = [UIImage imageNamed:@"logo_img_02"];
     [self.imageView setImage:image];
 }
 

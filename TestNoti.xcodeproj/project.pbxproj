@@ -16,6 +16,7 @@
 		474DA2F82289B8BE0082BFE7 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 474DA2F02289B8BE0082BFE7 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		474DA2FD2289B8D90082BFE7 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 474DA2FC2289B8D90082BFE7 /* NotificationService.m */; };
 		474DA3012289C35A0082BFE7 /* apnsJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 474DA3002289C35A0082BFE7 /* apnsJson.json */; };
+		474DA3032289D3110082BFE7 /* logo_img_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 474DA3022289D3110082BFE7 /* logo_img_02.png */; };
 		4767B8BE2289766900DC5F34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767B8BD2289766900DC5F34 /* AppDelegate.m */; };
 		4767B8C12289766900DC5F34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767B8C02289766900DC5F34 /* ViewController.m */; };
 		4767B8C42289766900DC5F34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4767B8C22289766900DC5F34 /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		474DA2F52289B8BE0082BFE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		474DA2FC2289B8D90082BFE7 /* NotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
 		474DA3002289C35A0082BFE7 /* apnsJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apnsJson.json; sourceTree = "<group>"; };
+		474DA3022289D3110082BFE7 /* logo_img_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_img_02.png; path = TestNoti/logo_img_02.png; sourceTree = SOURCE_ROOT; };
 		4767B8B92289766900DC5F34 /* TestNoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestNoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4767B8BC2289766900DC5F34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4767B8BD2289766900DC5F34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		474DA2DE2289B8000082BFE7 /* NotificationContent */ = {
 			isa = PBXGroup;
 			children = (
+				474DA3022289D3110082BFE7 /* logo_img_02.png */,
 				474DA2DF2289B8000082BFE7 /* NotificationViewController.h */,
 				474DA2E02289B8000082BFE7 /* NotificationViewController.m */,
 				474DA2E22289B8000082BFE7 /* MainInterface.storyboard */,
@@ -327,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474DA3032289D3110082BFE7 /* logo_img_02.png in Resources */,
 				474DA2E42289B8000082BFE7 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,7 +552,11 @@
 				DEVELOPMENT_TEAM = KLZ6FTC7C7;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzj.test2.NotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -564,7 +572,11 @@
 				DEVELOPMENT_TEAM = KLZ6FTC7C7;
 				INFOPLIST_FILE = NotificationContent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzj.test2.NotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -580,7 +592,11 @@
 				DEVELOPMENT_TEAM = KLZ6FTC7C7;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzj.test2.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -596,7 +612,11 @@
 				DEVELOPMENT_TEAM = KLZ6FTC7C7;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzj.test2.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -725,7 +745,10 @@
 				DEVELOPMENT_TEAM = KLZ6FTC7C7;
 				INFOPLIST_FILE = TestNoti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzj.test2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -741,7 +764,10 @@
 				DEVELOPMENT_TEAM = KLZ6FTC7C7;
 				INFOPLIST_FILE = TestNoti/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzj.test2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
