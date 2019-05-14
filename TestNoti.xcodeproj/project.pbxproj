@@ -25,6 +25,11 @@
 		4767B8CC2289766A00DC5F34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767B8CB2289766A00DC5F34 /* main.m */; };
 		4767B8D3228978D200DC5F34 /* logo_img_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4767B8D2228978D200DC5F34 /* logo_img_02.png */; };
 		4767B8D522897A3600DC5F34 /* icon_certification_status1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4767B8D422897A3600DC5F34 /* icon_certification_status1.png */; };
+		47E64453228AEA8500BB3E73 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47E64455228AEA8500BB3E73 /* InfoPlist.strings */; };
+		47E64460228AF29900BB3E73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47E6445A228AEF1500BB3E73 /* Localizable.strings */; };
+		47E64463228AF46100BB3E73 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474DA2E02289B8000082BFE7 /* NotificationViewController.m */; };
+		47E64464228AF68500BB3E73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47E6445A228AEF1500BB3E73 /* Localizable.strings */; };
+		47E64465228AF68F00BB3E73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47E6445A228AEF1500BB3E73 /* Localizable.strings */; };
 		5B7984C78A6E404787FCD142 /* libPods-NotificationService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6655F5524D7D6FC98ACEF7BB /* libPods-NotificationService.a */; };
 		E4314B1FA0C8B15337ECBE89 /* libPods-TestNoti.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C15982C6A24E44E9C1C696BA /* libPods-TestNoti.a */; };
 /* End PBXBuildFile section */
@@ -88,6 +93,12 @@
 		4767B8CB2289766A00DC5F34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4767B8D2228978D200DC5F34 /* logo_img_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_img_02.png; sourceTree = "<group>"; };
 		4767B8D422897A3600DC5F34 /* icon_certification_status1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_certification_status1.png; sourceTree = "<group>"; };
+		47E64454228AEA8500BB3E73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		47E64456228AEAA100BB3E73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		47E64457228AEAB200BB3E73 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		47E64459228AEF1500BB3E73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		47E6445E228AF06600BB3E73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		47E6445F228AF06700BB3E73 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6655F5524D7D6FC98ACEF7BB /* libPods-NotificationService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotificationService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB71B402B438D82D5D0181F /* Pods-TestNoti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNoti.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestNoti/Pods-TestNoti.release.xcconfig"; sourceTree = "<group>"; };
 		809DC855602CA664874187B4 /* libPods-NotificationContent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotificationContent.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +210,8 @@
 				4767B8C72289766A00DC5F34 /* LaunchScreen.storyboard */,
 				4767B8CA2289766A00DC5F34 /* Info.plist */,
 				4767B8CB2289766A00DC5F34 /* main.m */,
+				47E6445A228AEF1500BB3E73 /* Localizable.strings */,
+				47E64455228AEA8500BB3E73 /* InfoPlist.strings */,
 			);
 			path = TestNoti;
 			sourceTree = "<group>";
@@ -227,7 +240,6 @@
 				474DA2D72289B7FF0082BFE7 /* Sources */,
 				474DA2D82289B7FF0082BFE7 /* Frameworks */,
 				474DA2D92289B7FF0082BFE7 /* Resources */,
-				CEAA40467E8EBE06D8F79E5B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,7 +258,6 @@
 				474DA2EC2289B8BE0082BFE7 /* Sources */,
 				474DA2ED2289B8BE0082BFE7 /* Frameworks */,
 				474DA2EE2289B8BE0082BFE7 /* Resources */,
-				B0AD547FA3A52B2A47C69784 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,8 +277,6 @@
 				4767B8B62289766900DC5F34 /* Frameworks */,
 				4767B8B72289766900DC5F34 /* Resources */,
 				474DA2D62289B7AF0082BFE7 /* Embed App Extensions */,
-				FBA3959611DE5C587124DD98 /* [CP] Embed Pods Frameworks */,
-				EAF2DD0E035345B870D10838 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -312,6 +321,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 4767B8B02289766900DC5F34;
 			productRefGroup = 4767B8BA2289766900DC5F34 /* Products */;
@@ -331,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				474DA3032289D3110082BFE7 /* logo_img_02.png in Resources */,
+				47E64464228AF68500BB3E73 /* Localizable.strings in Resources */,
 				474DA2E42289B8000082BFE7 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47E64465228AF68F00BB3E73 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,9 +360,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4767B8C92289766A00DC5F34 /* LaunchScreen.storyboard in Resources */,
+				47E64453228AEA8500BB3E73 /* InfoPlist.strings in Resources */,
 				4767B8D522897A3600DC5F34 /* icon_certification_status1.png in Resources */,
 				4767B8C62289766A00DC5F34 /* Assets.xcassets in Resources */,
 				4767B8D3228978D200DC5F34 /* logo_img_02.png in Resources */,
+				47E64460228AF29900BB3E73 /* Localizable.strings in Resources */,
 				4767B8C42289766900DC5F34 /* Main.storyboard in Resources */,
 				474DA3012289C35A0082BFE7 /* apnsJson.json in Resources */,
 			);
@@ -394,36 +409,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B0AD547FA3A52B2A47C69784 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotificationService/Pods-NotificationService-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CEAA40467E8EBE06D8F79E5B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotificationContent/Pods-NotificationContent-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D23F870BFF3A546FBAB8E809 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,36 +425,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EAF2DD0E035345B870D10838 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestNoti/Pods-TestNoti-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FBA3959611DE5C587124DD98 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestNoti/Pods-TestNoti-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -496,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4767B8C12289766900DC5F34 /* ViewController.m in Sources */,
+				47E64463228AF46100BB3E73 /* NotificationViewController.m in Sources */,
 				4767B8CC2289766A00DC5F34 /* main.m in Sources */,
 				4767B8BE2289766900DC5F34 /* AppDelegate.m in Sources */,
 			);
@@ -540,6 +496,27 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
+		};
+		47E64455228AEA8500BB3E73 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47E64454228AEA8500BB3E73 /* en */,
+				47E64456228AEAA100BB3E73 /* zh-Hans */,
+				47E64457228AEAB200BB3E73 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		47E6445A228AEF1500BB3E73 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47E64459228AEF1500BB3E73 /* en */,
+				47E6445E228AF06600BB3E73 /* zh-Hans */,
+				47E6445F228AF06700BB3E73 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			path = /Users/zhuzhijia/Desktop/Test201904/Test201904/TestNoti/TestNoti;
+			sourceTree = "<absolute>";
 		};
 /* End PBXVariantGroup section */
 
@@ -628,6 +605,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -687,6 +665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

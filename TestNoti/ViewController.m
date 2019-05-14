@@ -10,6 +10,14 @@
 #import <UserNotifications/UserNotifications.h>
 #import "YYkit.h"
 
+//#define LocalizationFilePath ([[NSBundle mainBundle] pathForResource:[[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguage"] ofType:@"lproj"]==NULL ? @"en" : [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguage"])
+//#define LPLocalizedString(key, comment) \
+//({ \
+//NSString *string = [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@",LocalizationFilePath] ofType:@"lproj"]] localizedStringForKey:(key) value:@"" table:nil]; \
+//string == nil ? key : string; \
+//})
+//#define MyLocal(x, ...) LPLocalizedString(x, nil)
+
 @interface ViewController ()
 
 @end
@@ -23,8 +31,11 @@
 }
 
 - (void)test {
-    
-    
+    NSString *title = NSLocalizedString(@"title", nil);
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.frame = CGRectMake(0, 100, 100, 100);
+    [button setTitle:title forState:UIControlStateNormal];
+    [self.view addSubview:button];
 }
 
 - (IBAction)addLocal:(id)sender {
