@@ -65,6 +65,7 @@
 - (void)didReceiveNotification:(UNNotification *)notification {
     self.label.text = notification.request.content.title;
     self.subLabel.text = [NSString stringWithFormat:@"%@ [ContentExtension modified]", notification.request.content.subtitle];
+    self.subLabel.text = NSLocalizedString(@"title", nil);
     
     NSData *data = notification.request.content.userInfo[@"image"];
     UIImage *image = [UIImage imageWithData:data];
